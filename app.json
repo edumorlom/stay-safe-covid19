@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "#StaySafe",
+    "slug": "StaySafe",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "0.0.6",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.edumorales.StayHome",
+      "config": {
+        "googleMapsApiKey": "AIzaSyARYjdvM_M9wm246SfF_1s7zDCe6I7K8dI"
+      }
+    },
+    "android": {
+      "package": "dev.edumorales.StayHome"
+    },
+    "description": "",
+    "githubUrl": "https://github.com/edumorlom"
+  }
+}
