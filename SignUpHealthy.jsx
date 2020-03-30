@@ -1,7 +1,7 @@
 import {Image, Text, View} from "react-native";
 import appStyles from "./AppStyles";
 import React from "react";
-import care from "./care.png";
+import care from "./assets/care.png";
 import Button from "./Button";
 
 export default function SignUpHealthy(props) {

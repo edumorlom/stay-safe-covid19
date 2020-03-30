@@ -1,6 +1,6 @@
 import {Image, Text, View, Animated} from 'react-native';
 import React from "react";
-import genieImage from "./worldwide.png"
+import genieImage from "./assets/earth.png"
 import appStyles from './AppStyles'
 import ConfettiCannon from 'react-native-confetti-cannon';
 import * as Haptics from "expo-haptics";

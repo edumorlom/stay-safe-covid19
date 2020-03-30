@@ -2,19 +2,19 @@ import React from 'react';
 import {Linking, ScrollView, Text} from "react-native";
 import appStyles from "./AppStyles";
 import SelectionButton from "./SelectionButton";
-import numberOne from "./number-one.png";
-import numberTwo from "./number-two.png";
-import numberThree from "./number-three.png";
-import numberFour from "./number-four.png";
-import numberFive from "./number-five.png";
-import cdcLogo from "./cdc.png"
-import whoIcon from './whoIcon.png'
-import hands from './hands.png'
-import coughing from './coughing.png'
-import home from './home.png'
-import sneezing from './sneezing.png'
-import elderPerson from './elderly.png'
-import bloodCells from './red-blood-cells.png'
+import numberOne from "./assets/number-one.png";
+import numberTwo from "./assets/number-two.png";
+import numberThree from "./assets/number-three.png";
+import numberFour from "./assets/number-four.png";
+import numberFive from "./assets/number-five.png";
+import cdcLogo from "./assets/cdc.png"
+import whoIcon from './assets/whoIcon.png'
+import hands from './assets/hands.png'
+import coughing from './assets/coughing.png'
+import home from './assets/home.png'
+import sneezing from './assets/sneezing.png'
+import elderPerson from './functions/elderly.png'
+import bloodCells from './assets/red-blood-cells.png'
 import * as Haptics from "expo-haptics";
 
 

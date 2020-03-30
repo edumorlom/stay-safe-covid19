@@ -3,8 +3,8 @@ import {ScrollView, Text, View, Image} from "react-native";
 import Firebase from "./Firebase";
 import AllCountriesStatistics from "./AllCountriesStatistics";
 import USStatistics from "./USStatistics";
-import appStyles, {redColor} from "./AppStyles";
-import loading from './loading.gif'
+import appStyles from "./AppStyles";
+import loading from './assets/loading.gif'
 
 
 

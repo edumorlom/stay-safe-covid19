@@ -1,7 +1,7 @@
 import {Image, Text, View} from "react-native";
 import appStyles from "./AppStyles";
 import React from "react";
-import miamiImage from "./virus.png";
+import miamiImage from "./assets/virus.png";
 import Button from "./Button";
 
 export default function SignUpSick(props) {

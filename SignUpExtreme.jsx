@@ -1,7 +1,7 @@
 import {Image, Text, View} from "react-native";
 import appStyles from "./AppStyles";
 import React from "react";
-import medicine from "./getHelp.png";
+import medicine from "./assets/getHelp.png";
 import Button from "./Button";
 
 export default function SignUpExtreme(props) {

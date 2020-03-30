@@ -2,11 +2,10 @@ import {View, Linking, Text, ScrollView} from "react-native";
 import React from "react";
 import UserSelectionButton from "./UserSelectionButton";
 import ActionButton from "./ActionButton";
-import directionsArrow from './directions-arrow.png'
 import appStyles from './AppStyles'
-import smsIcon from './sms-icon.png'
-import callIcon from './call-icon.png'
-
+import smsIcon from './assets/sms-icon.png'
+import callIcon from './assets/call-icon.png'
+import directionsArrow from './assets/directions-arrow.png'
 
 export default function UserInfo(props){
 

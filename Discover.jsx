@@ -2,9 +2,9 @@ import React from 'react';
 import {ScrollView} from "react-native";
 import Learn from './Learn'
 import SelectionButton from "./SelectionButton";
-import washingHands from "./washing-hands.png";
-import blood from "./blood.png";
-import news from "./news.png";
+import washingHands from "./assets/washing-hands.png";
+import blood from "./assets/blood.png";
+import news from "./assets/news.png";
 import appStyles from "./AppStyles";
 import News from './LatestNews'
 import Symptoms from "./Symptoms";

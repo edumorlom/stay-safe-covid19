@@ -1,8 +1,8 @@
 import React from 'react';
 import {ScrollView} from "react-native";
 import VolunteerSelectionButton from "./UserSelectionButton";
-import hot from './hot.png'
-import help from './help.png'
+import hot from './assets/hot.png'
+import help from './assets/help.png'
 
 
 

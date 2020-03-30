@@ -2,13 +2,13 @@ import React from 'react';
 import {ScrollView, Text} from "react-native";
 import appStyles from "./AppStyles";
 import SelectionButton from "./SelectionButton";
-import thermometer from './thermometer.png'
-import cough from "./cough.png";
-import wind from "./wind.png";
-import lungs from "./lungs.png";
-import lips from "./lips.png";
-import pain from './medicine.png'
-import heart from './heart.png'
+import thermometer from './assets/thermometer.png'
+import cough from "./assets/cough.png";
+import wind from "./assets/wind.png";
+import lungs from "./assets/lungs.png";
+import lips from "./assets/lips.png";
+import pain from './assets/medicine.png'
+import heart from './assets/heart.png'
 
 
 export default class Symptoms extends React.Component {
