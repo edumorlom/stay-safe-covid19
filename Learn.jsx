@@ -13,7 +13,7 @@ import hands from './assets/hands.png'
 import coughing from './assets/coughing.png'
 import home from './assets/home.png'
 import sneezing from './assets/sneezing.png'
-import elderPerson from './functions/elderly.png'
+import elderPerson from './assets/elderly.png'
 import bloodCells from './assets/red-blood-cells.png'
 import * as Haptics from "expo-haptics";
 
