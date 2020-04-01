@@ -1,14 +1,17 @@
 import * as firebase from 'firebase';
 import getLocalizedText from "./getLocalizedText";
-import {NativeModules} from "react-native";
 import firebaseAccount from './firebase_account'
 
 
 export default class Firebase {
 
-    constructor() {
+    constructor(language) {
         const config = firebaseAccount;
         if (!firebase.apps.length) firebase.initializeApp(config);
+
+        if (!language) this.language = 'en';
+        else if (language.includes('es')) this.language = 'es';
+        else this.language = 'en'
     }
 
     signUp = (email, phoneNumber, password, info) => {
@@ -42,10 +45,9 @@ export default class Firebase {
     };
 
     async sendWelcomeSMS(fullName, phoneNumber) {
-        let deviceLanguage = 'ios' ? NativeModules.SettingsManager.settings.AppleLocale || NativeModules.SettingsManager.settings.AppleLanguages[0] : NativeModules.I18nManager.localeIdentifier
         phoneNumber = phoneNumber.substring(0, 2) === '+1' ? phoneNumber : '+1' + phoneNumber;
         let name = fullName.split(" ")[0];
-        let message = getLocalizedText(deviceLanguage, 'welcomeSMS').replace("{NAME}", name);
+        let message = getLocalizedText(this.language, 'welcomeSMS').replace("{NAME}", name);
             return await fetch(
                 `https://us-central1-numom-57642.cloudfunctions.net/sendCustomSMS?phoneNumber=${phoneNumber}`,
                 {
@@ -99,9 +101,9 @@ export default class Firebase {
     }
 
 
-    async getNews(language) {
+    async getNews() {
         return await fetch(
-            "http://newsapi.org/v2/everything?q=covid-19&sortBy=publishedAt&apiKey=e6380c02e81d4f2b8020bf7616ab47a2&language=" + language,
+            "http://newsapi.org/v2/everything?q=covid19&sortBy=publishedAt&apiKey=e6380c02e81d4f2b8020bf7616ab47a2&language=" + this.language,
             {
                 method: "GET",
                 headers: {

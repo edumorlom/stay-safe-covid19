@@ -57,7 +57,7 @@ export default class Introduction extends React.Component {
                     <Text style={appStyles.titleBlue}>{this.props.getLocalizedText("introductionTitle")}</Text>
                     <Image style={{margin: 100, width: appStyles.win.height * 0.15, height: appStyles.win.height * 0.15}} source={genieImage}/>
                     <Text style={{...appStyles.paragraphText, textAlign: 'center', paddingTop: 100, color: 'black'} }>{this.props.getLocalizedText('introductionSubtitle')}</Text>
-                    <Text style={{...appStyles.paragraphText, textAlign: 'center'} }>{this.props.getLocalizedText("introductionSubtitleSubtitle")}</Text>
+                    <Text style={{...appStyles.paragraphText, textAlign: 'center'} }>{this.props.getLocalizedText("stayAtHome")}</Text>
                 </View>
             </Animated.View>
         );

@@ -18,7 +18,6 @@ export default function SignUpSick(props) {
                     <Image style={{width: 100, height: 100}} source={miamiImage}/>
                 </View>
                 <View style={{width: appStyles.win.width * 0.9}}>
-                    <Text style={{...appStyles.paragraphText, textAlign: 'center', color: 'black'}}>{props.getLocalizedText("stayAtHome")}</Text>
                     <Text style={{...appStyles.paragraphText, textAlign: 'center', marginTop: 30, color: appStyles.blueColor} }>{props.getLocalizedText("youMightHaveCOVID")}</Text>
                     <Text style={{...appStyles.paragraphText, textAlign: 'center', color: appStyles.darkGreyColor} }>{props.getLocalizedText("nothingSerious")}</Text>
                 </View>

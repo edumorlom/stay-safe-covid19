@@ -43,7 +43,7 @@ export default class Homepage extends React.Component {
     };
 
     getUsers = () => {
-        let fb = new Firebase();
+        let fb = new Firebase(this.props.deviceLanguage);
         fb.getUsers().on("child_added", (snapshot) => {
             this.state.users = [...this.state.users, snapshot.val()];
             this.setState({users: this.state.users})
@@ -51,7 +51,7 @@ export default class Homepage extends React.Component {
     };
 
     getStatistics = () => {
-        let fb = new Firebase();
+        let fb = new Firebase(this.props.deviceLanguage);
         fb.getStatistics().then(res => res.json().then(res => console.log(this.setState({statistics: res.Countries}))))
     };
 
@@ -65,6 +65,9 @@ export default class Homepage extends React.Component {
             if (this.state.lowerPanelContent === 'findHelp') this.setLowerPanelContent('selection');
             if (this.state.lowerPanelContent === 'userInfo') this.setLowerPanelContent('findHelp');
             if (this.state.lowerPanelContent === 'discover') this.setLowerPanelContent('selection');
+            if (this.state.lowerPanelContent === 'symptoms') this.setLowerPanelContent('discover');
+            if (this.state.lowerPanelContent === 'learn') this.setLowerPanelContent('discover');
+            if (this.state.lowerPanelContent === 'news') this.setLowerPanelContent('discover');
             if (this.state.lowerPanelContent === 'statistics') this.setLowerPanelContent('selection');
 
         }
@@ -94,7 +97,8 @@ export default class Homepage extends React.Component {
                             lowerPanelContent={this.state.lowerPanelContent}
                             goBack={this.goBack}
                             setLowerPanelContent={this.setLowerPanelContent}
-                            getLocalizedText={this.props.getLocalizedText}/>
+                            getLocalizedText={this.props.getLocalizedText}
+                            deviceLanguage={this.props.deviceLanguage}/>
             </View>
         )
     }

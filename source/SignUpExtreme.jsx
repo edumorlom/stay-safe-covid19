@@ -13,7 +13,7 @@ export default function SignUpExtreme(props) {
                 justifyContent: 'center',
                 alignItems: 'center',
                 position: 'absolute'}}>
-                <Text style={appStyles.titleRed}>{"Call Your Doctor"}</Text>
+                <Text style={appStyles.titleRed}>{props.getLocalizedText("callYourDoctor")}</Text>
                 <View style={{margin: '25%'}}>
                     <Image style={{width: 100, height: 100}} source={medicine}/>
                 </View>

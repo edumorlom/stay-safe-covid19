@@ -38,20 +38,24 @@ export default class Statistics extends React.Component {
             return (
                 <ScrollView contentContainerStyle={{alignItems: 'center', justifyItems: 'center', maxWidth: '100%'}}>
                     <Image source={loading} style={{height: 100, width: 100, marginTop: '40%'}}/>
-                    <Text style={{...appStyles.paragraphText, color: appStyles.blueColor}}>Please Wait...</Text>
+                    <Text style={{...appStyles.paragraphText, color: appStyles.blueColor}}>{props.getLocalizedText('pleaseWait')}</Text>
                 </ScrollView>
             )
         }
         if (this.state.viewUS){
             return (
                 <ScrollView contentContainerStyle={{alignItems: 'center', maxWidth: '100%'}}>
-                    <USStatistics statistics={this.state.US}/>
+                    <USStatistics statistics={this.state.US} getLocalizedText={this.props.getLocalizedText}/>
                 </ScrollView>
             )
         } else {
             return (
                 <ScrollView contentContainerStyle={{alignItems: 'center', maxWidth: '100%'}}>
-                    <AllCountriesStatistics onPress={this.viewUS} statistics={this.props.statistics} positive={this.props.users.filter(user => user.sick).length} negative={this.props.users.filter(user => !user.sick).length}/>
+                    <AllCountriesStatistics getLocalizedText={this.props.getLocalizedText}
+                                            onPress={this.viewUS}
+                                            statistics={this.props.statistics}
+                                            positive={this.props.users.filter(user => user.sick).length}
+                                            negative={this.props.users.filter(user => !user.sick).length}/>
                 </ScrollView>
             )
         }

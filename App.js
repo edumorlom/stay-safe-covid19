@@ -96,12 +96,18 @@ export default class App extends React.Component {
       return (<LogIn setAppState={this.setAppState} login={this.loginWithEmailPassword} getLocalizedText={this.getLocalizedText}/>)
     } else if (this.state.screen === 'signup') {
       try {
-        return (<SignUp setAppState={this.setAppState} login={this.loginWithEmailPassword} getLocalizedText={this.getLocalizedText}/>)
+        return (<SignUp setAppState={this.setAppState} login={this.loginWithEmailPassword} getLocalizedText={this.getLocalizedText} deviceLanguage={this.state.deviceLanguage}/>)
       } catch (err) {
         this.setAppState({screen: 'login'})
       }
     } else {
-      return (<Homepage setAppState={this.setAppState} fullName={this.state.fullName} sick={this.state.sick} logout={this.logout} getLocalizedText={this.getLocalizedText} uid={this.state.uid}/>)
+      return (<Homepage setAppState={this.setAppState}
+                        fullName={this.state.fullName}
+                        sick={this.state.sick}
+                        logout={this.logout}
+                        getLocalizedText={this.getLocalizedText}
+                        uid={this.state.uid}
+                        deviceLanguage={this.state.deviceLanguage}/>)
     }
   }
 }

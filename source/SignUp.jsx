@@ -47,7 +47,7 @@ export default class SignUp extends React.Component {
     };
 
     signUp = () => {
-        let fb = new Firebase();
+        let fb = new Firebase(this.props.deviceLanguage);
         fb.signUp(this.state.email, this.state.phoneNumber, this.state.password, this.state);
     };
 

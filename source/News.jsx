@@ -9,7 +9,7 @@ export default class Learn extends React.Component {
 
     constructor(props) {
         super(props);
-        let fb = new Firebase();
+        let fb = new Firebase(this.props.deviceLanguage);
         fb.getNews('en').then(r => r.json().then(r => this.setState({news: r.articles})))
     }
 

@@ -54,13 +54,23 @@ export default class LowerPanel extends React.Component {
             return <FindHelp users={this.props.users.filter(user => user.sick !== this.props.sick)}
                              setUserToView={this.props.setUserToView}
                              setLowerPanelContent={this.props.setLowerPanelContent}
+                             lowerPanelContent={this.props.lowerPanelContent}
                              getLocalizedText={this.props.getLocalizedText}/>
         } else if (this.props.lowerPanelContent === 'userInfo'){
             return <UserInfo user={this.props.userToView} setLowerPanelContent={this.props.setLowerPanelContent} getLocalizedText={this.props.getLocalizedText}/>
-        } else if (this.props.lowerPanelContent === 'discover') {
-            return <Discover statistics={this.props.statistics} users={this.props.users} setLowerPanel={this.props.setLowerPanelContent} getLocalizedText={this.props.getLocalizedText}/>
+        } else if (this.props.lowerPanelContent === 'discover' || this.props.lowerPanelContent === 'symptoms'|| this.props.lowerPanelContent === 'learn' || this.props.lowerPanelContent === 'news') {
+            return <Discover statistics={this.props.statistics}
+                             users={this.props.users}
+                             setLowerPanelContent={this.props.setLowerPanelContent}
+                             lowerPanelContent={this.props.lowerPanelContent}
+                             getLocalizedText={this.props.getLocalizedText}
+                             deviceLanguage={this.props.deviceLanguage}/>
         } else if (this.props.lowerPanelContent === 'statistics'){
-            return <Statistics statistics={this.props.statistics} users={this.props.users} setLowerPanel={this.props.setLowerPanelContent} getLocalizedText={this.props.getLocalizedText}/>
+            return <Statistics statistics={this.props.statistics}
+                               users={this.props.users}
+                               setLowerPanel={this.props.setLowerPanelContent}
+                               lowerPanelContent={this.props.lowerPanelContent}
+                               getLocalizedText={this.props.getLocalizedText}/>
         } else {
             return <LowerPanelSelection fullName={this.props.fullName}
                                         sick={this.props.sick}
@@ -82,16 +92,13 @@ export default class LowerPanel extends React.Component {
     }
 
     render() {
-        console.log(this.props.lowerPanelContent);
-        let title = '';
-        if ((this.props.lowerPanelContent === 'findHelp' || this.props.lowerPanelContent === 'userInfo') && this.props.sick) title = 'Find Help';
-        if ((this.props.lowerPanelContent === 'findHelp' || this.props.lowerPanelContent === 'userInfo') && !this.props.sick) title = 'Volunteer';
-        if (this.props.lowerPanelContent === 'discover') title = 'Discover';
-        if (this.props.lowerPanelContent === 'statistics') title = 'Statistics';
-
         return (
             <View style={{...this.state.panelStyle, overflow: 'hidden'}}>
-                {this.props.lowerPanelContent !== 'selection' && <LowerPanelHeader title={title} onPress={this.props.goBack} getLocalizedText={this.props.getLocalizedText}/>}
+                {this.props.lowerPanelContent !== 'selection' &&
+                <LowerPanelHeader lowerPanelContent={this.props.lowerPanelContent}
+                                  sick={this.props.sick}
+                                  onPress={this.props.goBack}
+                                  getLocalizedText={this.props.getLocalizedText}/>}
                 {this.showContent()}
             </View>
         )

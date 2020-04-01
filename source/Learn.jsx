@@ -18,31 +18,31 @@ import bloodCells from '../assets/red-blood-cells.png'
 import * as Haptics from "expo-haptics";
 
 
-export default function Learn() {
+export default function Learn(props) {
     return (
         <ScrollView contentContainerStyle={{alignItems: 'center', width: appStyles.win.width}}>
-            <Text style={{...appStyles.paragraphText, color: appStyles.redColor, marginBottom: 30, marginTop: 10}}>Do these FIVE Steps:</Text>
-            <SelectionButton text={"Wash Your Hands"} icon={numberOne}
+            <Text style={{...appStyles.paragraphText, color: appStyles.redColor, marginBottom: 30, marginTop: 10}}>{props.getLocalizedText("doTheseFiveSteps") + ":"}</Text>
+            <SelectionButton text={props.getLocalizedText("washHands")} icon={numberOne}
                              onPress={() => {}}/>
-            <SelectionButton text={"Cough Onto Your Elbow"} icon={numberTwo}
+            <SelectionButton text={props.getLocalizedText("coughElbow")} icon={numberTwo}
                              onPress={() => {}}/>
-            <SelectionButton text={"Don't Touch Your Face"} icon={numberThree}
+            <SelectionButton text={props.getLocalizedText("dontTouchFace")} icon={numberThree}
                              onPress={() => {}}/>
-            <SelectionButton text={"Keep A Safe Distance"} icon={numberFour}
+            <SelectionButton text={props.getLocalizedText("keepSafeDistance")} icon={numberFour}
                              onPress={() => {}}/>
-            <SelectionButton text={"Stay Home"} icon={numberFive}
+            <SelectionButton text={props.getLocalizedText("stayAtHome")} icon={numberTwo}
                              onPress={() => {}}/>
             <Text style={{
                 ...appStyles.paragraphText,
                 color: appStyles.blueColor,
                 marginBottom: 30,
                 marginTop: 40,
-                textAlign: 'center'}}>How It Spreads:</Text>
-            <SelectionButton text={"Close Contact"} icon={hands}
+                textAlign: 'center'}}>{props.getLocalizedText("howItSpreads") + ':'}</Text>
+            <SelectionButton text={props.getLocalizedText("closeContact")} icon={hands}
                              onPress={() => {}}/>
-            <SelectionButton text={"Nearby Coughs"} icon={coughing}
+            <SelectionButton text={props.getLocalizedText("nearbyCoughs")} icon={coughing}
                              onPress={() => {}}/>
-            <SelectionButton text={"Nearby Sneezes"} icon={sneezing}
+            <SelectionButton text={props.getLocalizedText("nearbySneezes")} icon={sneezing}
                              onPress={() => {}}/>
 
 
@@ -51,35 +51,26 @@ export default function Learn() {
                 color: appStyles.blueColor,
                 marginBottom: 30,
                 marginTop: 40,
-                textAlign: 'center'}}>People At Higher Risk:</Text>
-            <SelectionButton text={"Elderly"} icon={elderPerson}
+                textAlign: 'center'}}>{props.getLocalizedText('peopleAtHigherRisk') + ':'}</Text>
+            <SelectionButton text={props.getLocalizedText("elderly")} icon={elderPerson}
+                             onPress={() => {}}/>
+            <SelectionButton text={props.getLocalizedText("inNursingHomes")} icon={home}
+                             onPress={() => {}}/>
+            <SelectionButton text={props.getLocalizedText("weakImmuneSystem")} icon={bloodCells}
+                             onPress={() => {}}/>
+
+            <Text style={{
+                ...appStyles.paragraphText,
+                color: appStyles.blueColor,
+                marginBottom: 30,
+                marginTop: 40,
+                textAlign: 'center'}}>{props.getLocalizedText("officialSources") + ':'}</Text>
+            <SelectionButton text={props.getLocalizedText("goToSite")} icon={cdcLogo}
                              onPress={() => {
                                  Haptics.selectionAsync().then();
                                  Linking.openURL("https://www.cdc.gov/");
                              }}/>
-            <SelectionButton text={"In Nursing Homes"} icon={home}
-                             onPress={() => {
-                                 Haptics.selectionAsync().then();
-                                 Linking.openURL("https://www.who.int");
-                             }}/>
-            <SelectionButton text={"Weak Immune System"} icon={bloodCells}
-                             onPress={() => {
-                                 Haptics.selectionAsync().then();
-                                 Linking.openURL("https://www.who.int");
-                             }}/>
-
-            <Text style={{
-                ...appStyles.paragraphText,
-                color: appStyles.blueColor,
-                marginBottom: 30,
-                marginTop: 40,
-                textAlign: 'center'}}>Official Sources:</Text>
-            <SelectionButton text={"Go To Site"} icon={cdcLogo}
-                             onPress={() => {
-                                 Haptics.selectionAsync().then();
-                                 Linking.openURL("https://www.cdc.gov/");
-                             }}/>
-            <SelectionButton text={"Go To Site"} icon={whoIcon}
+            <SelectionButton text={props.getLocalizedText("goToSite")} icon={whoIcon}
                              onPress={() => {
                                  Haptics.selectionAsync().then();
                                  Linking.openURL("https://www.who.int");

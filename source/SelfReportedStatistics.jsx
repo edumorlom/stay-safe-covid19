@@ -5,7 +5,6 @@ import React from "react";
 
 
 export default function CountryStatistics(props){
-
     return (
         <TouchableHighlight underlayColor={appStyles.underlayColor}
                             style={{
@@ -23,8 +22,8 @@ export default function CountryStatistics(props){
             <React.Fragment>
                 <View>
                     <Text style={{color: 'white', fontSize: appStyles.regularFontSize, fontWeight: 'bold'}}>{props.getLocalizedText("selfReportedCases")}</Text>
-                    <Text style={{color: 'white', fontSize: appStyles.regularFontSize}}>{props.getLocalizedText("healthy") + ":" + props.negative}</Text>
-                    <Text style={{color: 'white', fontSize: appStyles.regularFontSize}}>{props.getLocalizedText("sick") + ':' + props.positive}</Text>
+                    <Text style={{color: 'white', fontSize: appStyles.regularFontSize}}>{props.getLocalizedText("totalHealthy") + ": " + props.negative}</Text>
+                    <Text style={{color: 'white', fontSize: appStyles.regularFontSize}}>{props.getLocalizedText("totalSick") + ': ' + props.positive}</Text>
                 </View>
             </React.Fragment>
         </TouchableHighlight>

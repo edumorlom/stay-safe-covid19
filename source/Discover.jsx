@@ -4,38 +4,29 @@ import Learn from './Learn'
 import SelectionButton from "./SelectionButton";
 import washingHands from "../assets/washing-hands.png";
 import blood from "../assets/blood.png";
-import news from "../assets/news.png";
+import newspaperIcon from "../assets/news.png";
 import appStyles from "../AppStyles";
-import News from './LatestNews'
+import News from './News'
 import Symptoms from "./Symptoms";
 
 
-export default class Discover extends React.Component {
-
-    state = {content: 'selection'};
-
-    setContent = (content) => {
-        this.setState({content: content})
-    };
-
-    render() {
-        if (this.state.content === 'selection'){
-            return (
-                <ScrollView contentContainerStyle={{alignItems: 'center', width: appStyles.win.width}}>
-                    <SelectionButton text={this.props.getLocalizedText("symptoms")} icon={blood}
-                                     onPress={() => this.setContent('symptoms')}/>
-                    <SelectionButton text={this.props.getLocalizedText("learn")} icon={washingHands}
-                                     onPress={() => this.setContent('learn')}/>
-                    <SelectionButton text={this.props.getLocalizedText("news")} icon={news}
-                                     onPress={() => this.setContent('news')}/>
-                </ScrollView>
-            )
-        } else if (this.state.content === 'symptoms') {
-            return <Symptoms getLocalizedText={this.props.getLocalizedText}/>
-        } else if (this.state.content === 'learn') {
-            return <Learn getLocalizedText={this.props.getLocalizedText}/>
-        } else if (this.state.content === 'news'){
-            return <News getLocalizedText={this.props.getLocalizedText}/>
-        }
+export default function Discover(props) {
+    if (props.lowerPanelContent === 'discover') {
+        return (
+            <ScrollView contentContainerStyle={{alignItems: 'center', width: appStyles.win.width}}>
+                <SelectionButton text={props.getLocalizedText("symptoms")} icon={blood}
+                                 onPress={() => props.setLowerPanelContent('symptoms')}/>
+                <SelectionButton text={props.getLocalizedText("learn")} icon={washingHands}
+                                 onPress={() => props.setLowerPanelContent('learn')}/>
+                <SelectionButton text={props.getLocalizedText("news")} icon={newspaperIcon}
+                                 onPress={() => props.setLowerPanelContent('news')}/>
+            </ScrollView>
+        )
+    } else if (props.lowerPanelContent === 'symptoms') {
+        return <Symptoms getLocalizedText={props.getLocalizedText}/>
+    } else if (props.lowerPanelContent === 'learn') {
+        return <Learn getLocalizedText={props.getLocalizedText}/>
+    } else if (props.lowerPanelContent === 'news') {
+        return <News getLocalizedText={props.getLocalizedText} deviceLanguage={props.deviceLanguage}/>
     }
 }
