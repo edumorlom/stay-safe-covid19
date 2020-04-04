@@ -38,7 +38,7 @@ export default class Statistics extends React.Component {
             return (
                 <ScrollView contentContainerStyle={{alignItems: 'center', justifyItems: 'center', maxWidth: '100%'}}>
                     <Image source={loading} style={{height: 100, width: 100, marginTop: '40%'}}/>
-                    <Text style={{...appStyles.paragraphText, color: appStyles.blueColor}}>{props.getLocalizedText('pleaseWait')}</Text>
+                    <Text style={{...appStyles.paragraphText, color: appStyles.blueColor}}>{this.props.getLocalizedText('pleaseWait')}</Text>
                 </ScrollView>
             )
         }

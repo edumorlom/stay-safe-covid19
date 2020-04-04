@@ -3,7 +3,7 @@
   "phoneNumberInput": "Número de teléfono",
   "passwordInput": "Contraseña",
   "signInButton": "Ingresar",
-  "swipeUpToSignUp": "Deslize para registrarte",
+  "swipeUpToSignUp": "Deslize para registrarse",
   "introductionTitle": "Salvemos vidas",
   "introductionSubtitle": "Juntos",
   "iUnderstandButton": "Comprendo",
@@ -104,5 +104,5 @@
   "textUser": "Enviar mensaje",
   "services": "Servicios",
   "logout": "Cerrar sesión",
-  "youLoggedOut": "Ha cerrado sesión!"
+  "youLoggedOut": "¡Ha cerrado sesión!"
 }

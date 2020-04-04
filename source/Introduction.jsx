@@ -2,7 +2,7 @@ import {Image, Text, View, Animated} from 'react-native';
 import React from "react";
 import genieImage from "../assets/earth.png"
 import appStyles from '../AppStyles'
-import ConfettiCannon from 'react-native-confetti-cannon';
+// import ConfettiCannon from 'react-native-confetti-cannon';
 import * as Haptics from "expo-haptics";
 
 export default class Introduction extends React.Component {
@@ -48,7 +48,7 @@ export default class Introduction extends React.Component {
     render() {
         return (
             <Animated.View style={{opacity: this.state.fadeValue, ...appStyles.container}}>
-                <ConfettiCannon fadeOut={true} count={150} origin={{x: -10, y: 0}} fallSpeed={2500}/>
+                {/*<ConfettiCannon fadeOut={true} count={150} origin={{x: -10, y: 0}} fallSpeed={2500}/>*/}
                 <View style={{
                     paddingTop: appStyles.win.height * 0.10,
                     justifyContent: 'center',

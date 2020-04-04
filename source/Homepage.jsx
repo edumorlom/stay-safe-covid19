@@ -52,7 +52,7 @@ export default class Homepage extends React.Component {
 
     getStatistics = () => {
         let fb = new Firebase(this.props.deviceLanguage);
-        fb.getStatistics().then(res => res.json().then(res => console.log(this.setState({statistics: res.Countries}))))
+        fb.getStatistics().then(res => res.json().then(res => this.setState({statistics: res.Countries})))
     };
 
 
