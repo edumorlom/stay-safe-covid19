@@ -12,6 +12,10 @@ export default function RegionStatisticsButton(props){
         props.onPress();
     };
 
+    let numberWithCommas = number => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
     return (
         <TouchableHighlight underlayColor={appStyles.underlayColor}
                             onPress={onPress}
@@ -30,9 +34,9 @@ export default function RegionStatisticsButton(props){
             <React.Fragment>
                 <View>
                     <Text style={{color: props.country.TotalConfirmed === 0 ? 'green' : appStyles.blueColor, fontSize: appStyles.regularFontSize, fontWeight: 'bold'}}>{props.country.Country}</Text>
-                    <Text style={{color: 'black', fontSize: appStyles.regularFontSize}}>{props.country.TotalConfirmed ? props.getLocalizedText("totalSick") + ': ' + props.country.TotalConfirmed :  props.getLocalizedText('totalSick') +': 0'}</Text>
-                    <Text style={{color: appStyles.greyColor, fontSize: appStyles.regularFontSize}}>{props.country.TotalDeaths ? props.getLocalizedText("totalDeaths") + ': ' + props.country.TotalDeaths : props.getLocalizedText("totalDeaths") + ': 0'}</Text>
-                    <Text style={{color: appStyles.redColor, fontSize: appStyles.regularFontSize}}>{props.country.NewDeaths ? props.getLocalizedText("newDeaths") + ': ' + props.country.NewDeaths : ''}</Text>
+                    <Text style={{color: 'black', fontSize: appStyles.regularFontSize}}>{props.country.TotalConfirmed ? props.getLocalizedText("totalSick") + ': ' + numberWithCommas(props.country.TotalConfirmed):  props.getLocalizedText('totalSick') +': 0'}</Text>
+                    <Text style={{color: appStyles.greyColor, fontSize: appStyles.regularFontSize}}>{props.country.TotalDeaths ? props.getLocalizedText("totalDeaths") + ': ' + numberWithCommas(props.country.TotalDeaths) : props.getLocalizedText("totalDeaths") + ': 0'}</Text>
+                    <Text style={{color: appStyles.redColor, fontSize: appStyles.regularFontSize}}>{props.country.NewDeaths ? props.getLocalizedText("newDeaths") + ': ' + numberWithCommas(props.country.NewDeaths) : ''}</Text>
                 </View>
             </React.Fragment>
         </TouchableHighlight>
