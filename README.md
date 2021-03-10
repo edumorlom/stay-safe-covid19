@@ -1,12 +1,12 @@
-# Stay-Safe-COVID19
+# Stay Safe COVID19 Hackathon Submission (3 days)
 
-This is my submission to the (2020 DevPost Hackathon)[https://covid-healthhack-svc.devpost.com/], where I was a finalist.
+This is my submission to the [2020 DevPost Hackathon](https://covid-healthhack-svc.devpost.com/), where I was a finalist.
 
 ## Inspiration
 
 I was born and raised in Spain, one of the countries hit the hardest by the coronavirus pandemic. My grandparents are over the age of 80 and still live in Spain. We have advised them not to leave their house, yet they need to do grocery shopping. Who is going to do the shopping for them? They are part of the high-risk group of elderly people who could get very sick from COVID-19. I started thinking and thought of an app to help those people who might already have the coronavirus, are elderly or immunocompromised stay home.
 
-##What it does
+## What it does
 
 Keeps you updated on the COVID-19 pandemic and most importantly, will connect our most vulnerable citizens to volunteers who can help them obtain their essential needs. This app is going to be very important in allowing us to stay safe at home during these times of uncertainty.
 
