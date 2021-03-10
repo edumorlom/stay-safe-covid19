@@ -2,6 +2,8 @@
 
 This is my submission to the [2020 DevPost Hackathon](https://covid-healthhack-svc.devpost.com/), where I was a finalist.
 
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=2BzbhSQVvXg)](https://www.youtube.com/watch?v=2BzbhSQVvXg)
+
 ## Inspiration
 
 I was born and raised in Spain, one of the countries hit the hardest by the coronavirus pandemic. My grandparents are over the age of 80 and still live in Spain. We have advised them not to leave their house, yet they need to do grocery shopping. Who is going to do the shopping for them? They are part of the high-risk group of elderly people who could get very sick from COVID-19. I started thinking and thought of an app to help those people who might already have the coronavirus, are elderly or immunocompromised stay home.
